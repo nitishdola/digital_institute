@@ -36,4 +36,20 @@ class UnitsController extends Controller
 
         return Redirect::route('unit.index')->with('message', $message);
     }
+
+    public function index(Request $request) {
+        $where = [];
+        
+        if($request->subject_id != '') {
+            $where['subject_id'] = $request->subject_id;
+        }
+        if(trim($request->unit_name) != '') {
+            $results = Unit::where($where)->where('unit_name', 'LIKE', '%'.trim($request->unit_name).'%')->with('subject')->paginate(30);
+        }else{
+            $results = Unit::where($where)->with('subject')->paginate(30);
+        }
+        $subjects = Subject::whereStatus(1)->orderBy('subject_name', 'DESC')->lists('subject_name', 'id')->toArray();
+        
+        return view('units.index', compact('results', 'subjects'));
+    }
 }

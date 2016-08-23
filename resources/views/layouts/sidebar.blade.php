@@ -11,56 +11,19 @@
 			<li>
 				<a href="javascript:void(0);">
 					<i class="icon-desktop"></i>
-					UI Features
-					<span class="label label-info pull-right">6</span>
+					Units
 				</a>
 				<ul class="sub-menu">
 					<li>
-						<a href="ui_general.html">
+						<a href="{{ route('unit.create') }}">
 						<i class="icon-angle-right"></i>
-						General
+							Create new Unit
 						</a>
 					</li>
 					<li>
-						<a href="ui_buttons.html">
+						<a href="{{ route('unit.index') }}">
 						<i class="icon-angle-right"></i>
-						Buttons
-						</a>
-					</li>
-					<li>
-						<a href="ui_tabs_accordions.html">
-						<i class="icon-angle-right"></i>
-						Tabs &amp; Accordions
-						</a>
-					</li>
-					<li>
-						<a href="ui_sliders.html">
-						<i class="icon-angle-right"></i>
-						Sliders
-						</a>
-					</li>
-					<li>
-						<a href="ui_nestable_list.html">
-						<i class="icon-angle-right"></i>
-						Nestable List
-						</a>
-					</li>
-					<li>
-						<a href="ui_typography.html">
-						<i class="icon-angle-right"></i>
-						Typography / Icons
-						</a>
-					</li>
-					<li>
-						<a href="ui_google_maps.html">
-						<i class="icon-angle-right"></i>
-						Google Maps
-						</a>
-					</li>
-					<li>
-						<a href="ui_grid.html">
-						<i class="icon-angle-right"></i>
-						Grid
+							View All units
 						</a>
 					</li>
 				</ul>

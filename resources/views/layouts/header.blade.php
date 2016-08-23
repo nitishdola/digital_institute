@@ -51,7 +51,7 @@
 					<i class="icon-caret-down small"></i>
 				</a>
 					<li class="divider"></li> -->
-					<li><a href="login.html"><i class="icon-key"></i> Log Out</a></li>
+					<li><a href="{{route('logout')}}"><i class="icon-key"></i> Log Out</a></li>
 				</ul>
 			</li>
 			<!-- /user login dropdown -->

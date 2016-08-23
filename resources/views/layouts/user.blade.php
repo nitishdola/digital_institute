@@ -115,11 +115,6 @@
 				@yield('breadcumb')
 			</ul>
 		</div>
-		<div class="page-header">
-			<div class="page-title">
-				@yield('pageTitle')
-			</div>
-		</div>
 		<div class="row row-bg">
 			<div class="col-lg-12">
 				@if(Session::has('message'))
@@ -129,9 +124,9 @@
                 </div>
                 @endif
             </div>
-            <div class="row">
+        </div>
+        <div class="row">
 			@yield('content')
-			</div>
 		</div>
 	</div>
 </div>

@@ -12,7 +12,8 @@
 */
 Route::auth();
 
-Route::get('/', ['uses' => 'HomeController@index', 'middleware' => 'auth']);
+Route::get('/', ['uses' => 'HomeController@index', 'as' => 'dashboard', 'middleware' => 'auth']);
+Route::get('/logout',['as' => 'logout', 'uses' =>'Auth\AuthController@logout']);
 
 Route::group(['prefix'=>'unit'], function() {
     Route::get('/create', [
@@ -25,5 +26,29 @@ Route::group(['prefix'=>'unit'], function() {
         'as' => 'unit.store',
         'middleware' => ['auth'],
         'uses' => 'UnitsController@store'
+    ]);
+
+    Route::get('/view-all', [
+        'as' => 'unit.index',
+        'middleware' => ['auth'],
+        'uses' => 'UnitsController@index'
+    ]);
+
+    Route::get('/edit/{num}', [
+        'as' => 'unit.edit',
+        'middleware' => ['auth'],
+        'uses' => 'UnitsController@edit'
+    ]);
+
+    Route::post('/update/{num}', [
+        'as' => 'unit.update',
+        'middleware' => ['auth'],
+        'uses' => 'UnitsController@update'
+    ]);
+
+    Route::get('/disable/{num}', [
+        'as' => 'unit.disable',
+        'middleware' => ['auth'],
+        'uses' => 'UnitsController@disable'
     ]);
 });

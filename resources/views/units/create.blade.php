@@ -5,18 +5,18 @@
 @section('breadcumb') 
 <li>
 	<i class="icon-home"></i>
-	<a href="index.html">Dashboard</a>
+	<a href="{{ route('dashboard') }}">Dashboard</a>
 </li>
 <li class="current">
-	<a href="pages_calendar.html" title="">Calendar</a>
+	Add New Unit
 </li>
 @endsection
 
 @section('content')
-<div class="row">
 	<div class="col-md-12">
 		<div class="widget box">
 			<div class="widget-content">
+				<h2>Add Unit</h2>
 				{!! Form::open(array('route' => 'unit.store', 'id' => 'unit.store', 'class' => 'form-horizontal row-border')) !!}
 			        @include('units._form')
 			        {!! Form::label('', '', array('class' => 'col-md-4 control-label')) !!}
@@ -25,5 +25,4 @@
 			</div>
 		</div>
 	</div>
-</div>
 @endsection
