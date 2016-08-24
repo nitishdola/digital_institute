@@ -9,7 +9,7 @@
 <div class="form-group {{ $errors->has('subject_id') ? 'has-error' : ''}}">
   {!! Form::label('subject_id', 'Select Subject', array('class' => 'col-md-3 control-label')) !!}
   <div class="col-md-9">
-  {!! Form::select('subject_id', $subjects, null, ['class' => 'col-md-12 select2 required', 'id' => 'subject_id','required' => 'true']) !!}
+  {!! Form::select('subject_id', $subjects, null, ['class' => 'col-md-12 select2 required', 'id' => 'subject_id','required' => 'true', 'data-placeholder' => 'Select Subject']) !!}
   {!! $errors->first('subject_id', '<span class="help-inline">:message</span>') !!}
   </div>
 </div>

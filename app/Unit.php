@@ -14,7 +14,6 @@ class Unit extends Model
     	'unit_name' 	=>  'required|max:255', 
     	'subject_id' 	=>  'required|exists:subjects,id',
     ];
-
     public function subject() 
 	{
 		return $this->belongsTo('App\Subject', 'subject_id');

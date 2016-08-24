@@ -51,4 +51,19 @@ Route::group(['prefix'=>'unit'], function() {
         'middleware' => ['auth'],
         'uses' => 'UnitsController@disable'
     ]);
+    Route::get('/assign', [
+        'as' => 'unit.assign',
+        'middleware' => ['auth'],
+        'uses' => 'UnitsController@assign_units'
+    ]);
+    Route::post('/assign', [
+        'as' => 'unit.assign.post',
+        'middleware' => ['auth'],
+        'uses' => 'UnitsController@post_assign_units'
+    ]);
+    Route::get('/assigned', [
+        'as' => 'unit.assigned',
+        'middleware' => ['auth'],
+        'uses' => 'UnitsController@assigned_subjects'
+    ]);
 });
