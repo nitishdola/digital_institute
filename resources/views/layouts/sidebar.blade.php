@@ -26,6 +26,18 @@
 							View All units
 						</a>
 					</li>
+					<li>
+						<a href="{{ route('unit.assign') }}">
+						<i class="icon-angle-right"></i>
+							Assign Units
+						</a>
+					</li>
+					<li>
+						<a href="{{ route('unit.assigned') }}">
+						<i class="icon-angle-right"></i>
+							View All Assigned Units
+						</a>
+					</li>
 				</ul>
 			</li>
 		</ul>

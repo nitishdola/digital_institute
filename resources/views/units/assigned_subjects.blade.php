@@ -58,9 +58,9 @@
 			            <td class="hidden-xs"> {{ $v->class['class_name'] }} </td>
 			            <td> {{ $v->subject['subject_name'] }} </td>
 			            <td> {{ $v->unit['unit_name'] }} </td>
-			            <td> <a href="{{ route('unit.edit', Crypt::encrypt($v->id) ) }}" title="Edit unit">Edit</a>
+			            <td> <a href="{{ route('edit.assigned', Crypt::encrypt($v->id) ) }}" title="Edit unit">Edit</a>
 			            </td>
-			            <td> <a onclick="return confirm('Are you sure you want to delete this unit ?');" href="{{ route('unit.disable', Crypt::encrypt($v->id) ) }}" title="Remove unit"><i class="fa fa-trash"></i>Remove</a> </td>
+			            <td> <a onclick="return confirm('Are you sure you want to delete this  ?');" href="{{ route('remove.assigned', Crypt::encrypt($v->id) ) }}" title="Remove"><i class="fa fa-trash"></i>Remove</a> </td>
 			        </tr>
 			        @endforeach
 			    </tbody>
@@ -73,8 +73,6 @@
                   <button type="button" class="close" data-dismiss="alert" aria-hidden="true"><i class="fa fa-times-circle"></i></button>
                   No Units Found !
                 </div>
-
-                <a href="{{ route('unit.create') }}" class="btn btn-success">Add new Unit</a>
 		    @endif
 		</div>
 	</div>

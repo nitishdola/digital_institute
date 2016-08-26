@@ -66,4 +66,20 @@ Route::group(['prefix'=>'unit'], function() {
         'middleware' => ['auth'],
         'uses' => 'UnitsController@assigned_subjects'
     ]);
+    Route::get('/edit/assigned/{num}', [
+        'as' => 'edit.assigned',
+        'middleware' => ['auth'],
+        'uses' => 'UnitsController@edit_assigned_unit'
+    ]);
+    Route::post('/update/assigned/{num}', [
+        'as' => 'update.assigned',
+        'middleware' => ['auth'],
+        'uses' => 'UnitsController@update_assigned_unit'
+    ]);
+    Route::get('/remove/assigned/{num}', [
+        'as' => 'remove.assigned',
+        'middleware' => ['auth'],
+        'uses' => 'UnitsController@remove_assigned_unit'
+    ]);
+
 });
